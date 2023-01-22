@@ -53,8 +53,9 @@ function App() {
             return (
               <Result
                 key={item.idDrink}
-                id={item.idDrink}
+                idDrink={item.idDrink}
                 strDrink={item.strDrink}
+                strDrinkThumb={item.strDrinkThumb}
               />
             );
           })}

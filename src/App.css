@@ -38,5 +38,10 @@
 }
 
 .results {
-  margin: 10px
+  margin: 20px
+}
+
+.results img {
+  border-radius: 80%;
+  width: 150px;
 }
