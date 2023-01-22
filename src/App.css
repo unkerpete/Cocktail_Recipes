@@ -20,9 +20,23 @@
 
 .top-section-right {
   margin: 5px;
-  width:500px
 }
 
 .search-section {
   padding: 10px;
+}
+
+.results-section {
+  margin: auto;
+}
+
+.search-results-container {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.results {
+  margin: 10px
 }
