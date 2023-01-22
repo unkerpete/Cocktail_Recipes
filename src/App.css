@@ -41,6 +41,10 @@
   margin: 20px
 }
 
+h4 {
+  margin-bottom: 0;
+}
+
 .results img {
   border-radius: 80%;
   width: 150px;

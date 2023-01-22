@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import defaultSearchResults from './data';
 import Result from './components/Result';
+import SearchSection from './components/SearchSection';
 
 function App() {
   const [recipe, setRecipe] = useState(defaultSearchResults.drinks);
@@ -42,9 +43,10 @@ function App() {
         </div>
       </div>
       <div className='search-section'>
-        <input type='text' onChange={handleInput} />
-        <br />
-        <button onClick={handleClickAPI}>Search</button>
+        <SearchSection
+          handleInput={handleInput}
+          handleClickAPI={handleClickAPI}
+        />
       </div>
       <div className='results-section'>
         <h3>{searchClicked && `Search results for: ${showSearch}`}</h3>
