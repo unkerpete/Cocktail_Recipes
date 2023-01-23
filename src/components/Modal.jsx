@@ -1,9 +1,10 @@
 import React from 'react';
+import Button from './Button';
 
 const Modal = (props) => {
   return (
     <>
-      <div className='modal' onClick={props.closeModal}>
+      <div className='modal'>
         <div className='overlay'>
           <div className='modal-content'>
             <h3>{props.strDrink}</h3>
@@ -56,7 +57,7 @@ const Modal = (props) => {
               {props.strMeasure15 && props.strMeasure15}
             </p>
             <p>{props.strInstructions}</p>
-            <button onClick={props.closeModal}>Close</button>
+            <Button onClick={props.closeModal} btnTxt='Close' />
           </div>
         </div>
       </div>

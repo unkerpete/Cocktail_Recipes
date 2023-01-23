@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 const SearchSection = (props) => {
   return (
@@ -10,7 +11,7 @@ const SearchSection = (props) => {
         placeholder='search for a cocktail here'
       />
       <br />
-      <button onClick={props.handleClickAPI}>Search</button>
+      <Button onClick={props.handleClickAPI} btnTxt='Search' />
     </>
   );
 };
