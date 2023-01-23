@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import Modal from './Modal';
 
 const Result = (props) => {
   const [showModal, setShowModal] = useState(false);
 
-  const handleImgClicked = (e) => {
-    console.log(e.target.alt);
+  const handleImgClicked = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -15,6 +20,7 @@ const Result = (props) => {
         alt={props.strDrink}
         onClick={handleImgClicked}
       />
+      {showModal && <Modal closeModal={closeModal} {...props} />}
     </div>
   );
 };
