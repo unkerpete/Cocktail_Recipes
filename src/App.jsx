@@ -41,12 +41,10 @@ function App() {
           </div>
         </div>
       </div>
-      <div className='search-section'>
-        <SearchSection
-          handleInput={handleInput}
-          handleClickAPI={handleClickAPI}
-        />
-      </div>
+      <SearchSection
+        handleInput={handleInput}
+        handleClickAPI={handleClickAPI}
+      />
       <div className='results-section'>
         <h3>
           {searchClicked
@@ -54,17 +52,19 @@ function App() {
             : 'Search results for: Margarita'}
         </h3>
         <div className='search-results-container'>
-          {recipe.map((item) => {
-            return (
-              <Result
-                key={item.idDrink}
-                idDrink={item.idDrink}
-                strDrink={item.strDrink}
-                strDrinkThumb={item.strDrinkThumb}
-                {...item}
-              />
-            );
-          })}
+          {recipe
+            ? recipe.map((item) => {
+                return (
+                  <Result
+                    key={item.idDrink}
+                    idDrink={item.idDrink}
+                    strDrink={item.strDrink}
+                    strDrinkThumb={item.strDrinkThumb}
+                    {...item}
+                  />
+                );
+              })
+            : 'No such cocktails in our database. Please try another search.'}
         </div>
       </div>
     </div>

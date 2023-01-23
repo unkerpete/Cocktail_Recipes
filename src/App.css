@@ -45,13 +45,13 @@ h4 {
   margin-bottom: 0;
 }
 
-.results img {
+.results-img {
   border-radius: 80%;
   width: 150px;
   cursor: pointer;
 }
 
-img:hover {
+.results-img:hover {
   border-radius: 10%;
   width: 250px
 }
@@ -80,5 +80,23 @@ input {
   padding: 14px 28px;
   border-radius: 3px;
   max-width: 800px;
-  min-width: 300px;
+  min-width: 500px;
+  min-height: 300px;
+}
+
+.ingredients-container {
+  width:100%;
+  /* margin: 0 auto */
+  display: flex;
+}
+
+.ingredients-container .ingredients{
+  text-align: left;
+  width: 50%
+}
+
+.ingredients-container img{
+  text-align: left;
+  border-radius: 10px;
+  width: 250px
 }

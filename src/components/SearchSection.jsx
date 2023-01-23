@@ -3,7 +3,7 @@ import Button from './Button';
 
 const SearchSection = (props) => {
   return (
-    <>
+    <div className='search-section'>
       <input
         name='search'
         type='text'
@@ -12,7 +12,7 @@ const SearchSection = (props) => {
       />
       <br />
       <Button onClick={props.handleClickAPI} btnTxt='Search' />
-    </>
+    </div>
   );
 };
 

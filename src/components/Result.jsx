@@ -16,6 +16,7 @@ const Result = (props) => {
     <div className='results'>
       <h4>{props.strDrink}</h4>
       <img
+        className='results-img'
         src={props.strDrinkThumb}
         alt={props.strDrink}
         onClick={handleImgClicked}
