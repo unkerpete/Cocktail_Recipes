@@ -18,7 +18,6 @@ function App() {
       );
       const json = await res.json();
       setRecipe(json.drinks);
-      console.log(recipe);
     } catch (err) {
       alert(err.message);
     }
@@ -49,7 +48,11 @@ function App() {
         />
       </div>
       <div className='results-section'>
-        <h3>{searchClicked && `Search results for: ${showSearch}`}</h3>
+        <h3>
+          {searchClicked
+            ? `Search results for: ${showSearch}`
+            : 'Search results for: Margarita'}
+        </h3>
         <div className='search-results-container'>
           {recipe.map((item) => {
             return (
@@ -58,6 +61,7 @@ function App() {
                 idDrink={item.idDrink}
                 strDrink={item.strDrink}
                 strDrinkThumb={item.strDrinkThumb}
+                {...item}
               />
             );
           })}
