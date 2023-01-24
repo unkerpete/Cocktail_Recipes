@@ -8,7 +8,7 @@ const SearchSection = (props) => {
         name='search'
         type='text'
         onChange={props.handleInput}
-        placeholder='search for a cocktail here'
+        placeholder={props.placeHolder}
       />
       <br />
       <Button onClick={props.handleClickAPI} btnTxt='Search' />

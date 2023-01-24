@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import '../App.css';
-import defaultSearchResults from '../data';
+import { defaultNameSearchData } from '../data';
 import Result from '../components/Result';
 import SearchSection from '../components/SearchSection';
 
 const SearchByName = () => {
-  const [recipe, setRecipe] = useState(defaultSearchResults.drinks);
+  const [recipe, setRecipe] = useState(defaultNameSearchData.drinks);
   const [searchClicked, setSearchClicked] = useState(false);
   const [showSearch, setShowSearch] = useState('');
   const [input, setInput] = useState();
@@ -34,6 +34,7 @@ const SearchByName = () => {
       <SearchSection
         handleInput={handleInput}
         handleClickAPI={handleClickAPI}
+        placeHolder='enter name of cocktail'
       />
       <div className='results-section'>
         <h3>
