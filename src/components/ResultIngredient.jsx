@@ -13,7 +13,7 @@ const ResultIngredient = (props) => {
       );
       const json = await res.json();
       console.log('api calling'); // shows that this api gets called twice for each result. WHY???
-      setInfo(json.drinks);
+      setInfo(json.drinks[0]);
     } catch (err) {
       alert(err.message);
     }
@@ -40,7 +40,7 @@ const ResultIngredient = (props) => {
         alt={props.strDrink}
         onClick={handleImgClicked}
       />
-      {showModal && <Modal closeModal={closeModal} {...props} />}
+      {showModal && <Modal closeModal={closeModal} {...props} {...info} />}
     </div>
   );
 };
