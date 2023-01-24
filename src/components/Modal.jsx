@@ -1,7 +1,14 @@
 import React from 'react';
 import Button from './Button';
+import { useState } from 'react';
 
 const Modal = (props) => {
+  const [languageValue, setLanguageValue] = useState('1');
+
+  const handleSelection = (e) => {
+    setLanguageValue(e.target.value);
+  };
+
   return (
     <>
       <div className='modal'>
@@ -63,7 +70,49 @@ const Modal = (props) => {
                 alt={props.strDrink}
               />
             </div>
-            <p>{props.strInstructions}</p>
+            <select onClick={handleSelection}>
+              <option value='1'>English</option>
+              <option value='2'>Spanish</option>
+              <option value='3'>German</option>
+              <option value='4'>French</option>
+              <option value='5'>Italian</option>
+            </select>
+            {/* <p>{props.strInstructions}</p> */}
+            {languageValue === '1' ? (
+              !props.strInstructions ? (
+                <p>No translation available, use Google translate.</p>
+              ) : (
+                <p>{props.strInstructions}</p>
+              )
+            ) : null}
+            {languageValue === '2' ? (
+              !props.strInstructionsES ? (
+                <p>No translation available, use Google translate.</p>
+              ) : (
+                <p>{props.strInstructionsES}</p>
+              )
+            ) : null}
+            {languageValue === '3' ? (
+              !props.strInstructionsDE ? (
+                <p>No translation available, use Google translate.</p>
+              ) : (
+                <p>{props.strInstructionsDE}</p>
+              )
+            ) : null}
+            {languageValue === '4' ? (
+              !props.strInstructionsFR ? (
+                <p>No translation available, use Google translate.</p>
+              ) : (
+                <p>{props.strInstructionsFR}</p>
+              )
+            ) : null}
+            {languageValue === '5' ? (
+              !props.strInstructionsIT ? (
+                <p>No translation available, use Google translate.</p>
+              ) : (
+                <p>{props.strInstructionsIT}</p>
+              )
+            ) : null}
             <Button onClick={props.closeModal} btnTxt='Close' />
           </div>
         </div>
