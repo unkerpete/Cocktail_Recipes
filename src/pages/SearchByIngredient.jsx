@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../App.css';
 import { defaultIngredientSearchData } from '../data';
-import Result from '../components/Result';
+import ResultIngredient from '../components/ResultIngredient';
 import SearchSection from '../components/SearchSection';
 
 const SearchByIngredient = () => {
@@ -47,7 +47,7 @@ const SearchByIngredient = () => {
           {recipe
             ? recipe.map((item) => {
                 return (
-                  <Result
+                  <ResultIngredient
                     key={item.idDrink}
                     idDrink={item.idDrink}
                     strDrink={item.strDrink}
