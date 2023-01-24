@@ -79,7 +79,7 @@ input {
   background: white;
   padding: 14px 28px;
   border-radius: 30px;
-  max-width: 800px;
+  max-width: 500px;
   min-width: 500px;
   min-height: 300px;
 }
@@ -104,4 +104,9 @@ input {
 h2 {
   margin-top: 100px;
   margin-bottom: 0;
+}
+
+.language-option {
+  border-radius: 3px;
+  margin-top:20px;
 }

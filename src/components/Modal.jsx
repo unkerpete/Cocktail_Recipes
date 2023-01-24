@@ -70,7 +70,7 @@ const Modal = (props) => {
                 alt={props.strDrink}
               />
             </div>
-            <select onClick={handleSelection}>
+            <select onClick={handleSelection} className='language-option'>
               <option value='1'>English</option>
               <option value='2'>Spanish</option>
               <option value='3'>German</option>
