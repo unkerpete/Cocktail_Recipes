@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import Modal from './Modal';
 
 const ResultIngredient = (props) => {
@@ -11,14 +12,16 @@ const ResultIngredient = (props) => {
         `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${props.idDrink}`
       );
       const json = await res.json();
-      console.log('api calling');
+      console.log('api calling'); // shows that this api gets called twice for each result. WHY???
       setInfo(json.drinks);
     } catch (err) {
       alert(err.message);
     }
   }
 
-  insertInfo();
+  useEffect(() => {
+    insertInfo();
+  }, []);
 
   const handleImgClicked = () => {
     setShowModal(true);
