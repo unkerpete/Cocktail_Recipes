@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
 import '../App.css';
 import defaultSearchResults from '../data';
 import Result from '../components/Result';
@@ -31,18 +30,7 @@ const SearchByName = () => {
 
   return (
     <div className='App'>
-      <h1>Cocktail Recipes</h1>
-      <div className='top-section-container'>
-        <div className='top-section-left'>
-          I AM TOP SECTION LEFT Hello. Ingredients list here
-        </div>
-        <div className='top-section-right-container'>
-          <div className='top-section-right'>
-            <button>Search by ingredient</button> <span />
-            <button>Search by category</button>
-          </div>
-        </div>
-      </div>
+      <h2>Searching By Name</h2>
       <SearchSection
         handleInput={handleInput}
         handleClickAPI={handleClickAPI}
