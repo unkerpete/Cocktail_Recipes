@@ -4,8 +4,37 @@ import './App.css';
 import SearchByName from './pages/SearchByName';
 import SearchByIngredient from './pages/SearchByIngredient';
 import Button from './components/Button';
+import { useEffect } from 'react';
 
 function App() {
+  const [weather, setWeather] = useState({});
+
+  async function fetchIpAddress() {
+    // this fetch gets user's IP address
+    const data = await fetch('https://api.ipify.org/?format=json');
+    const json = await data.json();
+
+    // this fetch uses the IP address to get user's location details
+    const locationData = await fetch(
+      `https://api.techniknews.net/ipgeo/${json.ip}`
+    );
+    const jsonLocationData = await locationData.json();
+    console.log(jsonLocationData);
+
+    // this fetch uses the location details to get user's weather info
+    const weatherData = await fetch(
+      `https://goweather.herokuapp.com/weather/${jsonLocationData.city}`
+    );
+    const jsonWeatherData = await weatherData.json();
+
+    console.log(jsonWeatherData);
+    setWeather(jsonWeatherData);
+  }
+
+  useEffect(() => {
+    fetchIpAddress();
+  }, []);
+
   return (
     <>
       <h1>Cocktail Recipes</h1>

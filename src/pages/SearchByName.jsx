@@ -10,7 +10,7 @@ const SearchByName = () => {
   const [showSearch, setShowSearch] = useState('');
   const [input, setInput] = useState();
 
-  const handleClickAPI = async function () {
+  async function handleClickAPI() {
     setShowSearch(input);
     try {
       const res = await fetch(
@@ -22,7 +22,7 @@ const SearchByName = () => {
       alert(err.message);
     }
     setSearchClicked(true);
-  };
+  }
 
   const handleInput = (e) => {
     setInput(e.target.value);

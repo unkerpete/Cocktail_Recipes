@@ -8,6 +8,7 @@
 .top-section-container {
   display:flex;
 }
+
 .top-section-left {
   width: 50%;
   margin: 5px;
@@ -50,16 +51,62 @@ h4 {
   border-radius: 80%;
   width: 150px;
   cursor: pointer;
+  -webkit-animation-duration: 1.25s;
+  animation-duration: 1.25s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
 }
 
+/* bounce effect CSS credit to https://codepen.io/halink0803/pen/qdVXqm?editors=1100 */
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+
+/* @keyframes bounce {
+	0% {
+		-webkit-transform: translateY(-500px);
+		-ms-transform:     translateY(-500px);
+		transform:         translateY(-500px)
+	}
+	40% {
+		-webkit-transform: translateY(-60%);
+		-ms-transform:     translateY(-60%);
+		transform:         translateY(-60%)
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+} */
+
 .results-img:hover {
-  border-radius: 5%;
+  animation-name: bounce;
 }
 
 input {
   height:25px;
 }
 
+/* overlay and modal content CSS credit to www.youtube.com/watch?v=9DwGahSqcEc */
 .overlay {
   width: 100vw;
   height: 100vh;
@@ -82,11 +129,11 @@ input {
   max-width: 500px;
   min-width: 500px;
   min-height: 300px;
+  background-image: url('./assets/subtle-prism-modal.svg')
 }
 
 .ingredients-container {
   width:100%;
-  /* margin: 0 auto */
   display: flex;
 }
 
@@ -110,3 +157,10 @@ h2 {
   border-radius: 3px;
   margin-top:20px;
 }
+
+input {
+  border-radius: 3px;
+  border: solid gray 1.5px
+}
+
+
