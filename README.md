@@ -34,4 +34,7 @@ The final app hierarchy looks like this:
 
 
 ## Further work and Features
-Mobile friendly CSS codes to add.
+~~Mobile friendly CSS codes to add.~~ done  
+
+## Deployment
+https://astounding-ganache-bc1737.netlify.app/
