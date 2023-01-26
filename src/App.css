@@ -240,5 +240,9 @@ input {
     text-align: left;
     width: 80%
   }
+
+  button {
+    color: black
+  }
 }
 
