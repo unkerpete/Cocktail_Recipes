@@ -34,14 +34,14 @@ const SearchByIngredient = () => {
       <SearchSection
         handleInput={handleInput}
         handleClickAPI={handleClickAPI}
-        placeHolder='enter ingredient'
+        placeHolder='enter ingredient...'
       />
       <div className='results-section'>
-        <h3>
+        <h4>
           {searchClicked
             ? `Search results for: ${showSearch}`
             : 'Search results for: Salt'}
-        </h3>
+        </h4>
 
         <div className='search-results-container'>
           {recipe

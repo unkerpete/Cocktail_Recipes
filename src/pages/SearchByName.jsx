@@ -34,14 +34,14 @@ const SearchByName = () => {
       <SearchSection
         handleInput={handleInput}
         handleClickAPI={handleClickAPI}
-        placeHolder='enter name of cocktail'
+        placeHolder='enter name of cocktail...'
       />
       <div className='results-section'>
-        <h3>
+        <h4>
           {searchClicked
             ? `Search results for: ${showSearch}`
             : 'Search results for: Margarita'}
-        </h3>
+        </h4>
 
         <div className='search-results-container'>
           {recipe
